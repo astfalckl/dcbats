@@ -33,6 +33,8 @@ set
         mh_artfima.R
         wasserstein_utils.R
 
+      artfima/  <--- [archived version of artfima]
+
       scripts/
         simulate_data.R
         fit_posteriors.R
