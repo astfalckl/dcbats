@@ -130,6 +130,6 @@ chmod +x run_case_study_batch.sh
 
 ``` bash
 Rscript summarise_coverage_case_study.r \
-  --root case_study_pilot \
-  --n-reps 50
+  --root case_study \
+  --n-reps 30
 ```

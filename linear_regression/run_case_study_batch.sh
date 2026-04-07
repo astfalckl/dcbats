@@ -13,7 +13,7 @@ set -euo pipefail
 #   ...
 
 N_REPS=50
-T_VAL=10000
+T_VAL=100000
 P_VAL=10
 K_LIST="5,10,20"
 
@@ -22,7 +22,7 @@ FIT_SCRIPT="fit_posteriors.r"
 WASS_SCRIPT="wasserstein_average.r"
 STAN_FILE="model_ar2_errors.stan"
 
-OUT_ROOT="case_study_pilot"
+OUT_ROOT="case_study"
 
 # MCMC settings: tune these as needed
 CHAINS=4
@@ -84,7 +84,7 @@ run_one_rep() {
 }
 
 # Scenarios from the paper excerpt
-for rep in $(seq 13 "${N_REPS}"); do
+for rep in $(seq 1 "${N_REPS}"); do
   run_one_rep "iid"   "0.0" "0.0" "${rep}"
   run_one_rep "case1" "0.3" "0.1" "${rep}"
   run_one_rep "case2" "0.8" "0.0" "${rep}"

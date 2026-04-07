@@ -6,6 +6,10 @@ linear_regression/__run_example.r
 linear_regression/make_figure_all.r
 linear_regression/model_ar2_errors
 
+artfima/data/
+artfima/results/
+artfima/__helper_code.r
+
 # R artifacts
 .Rhistory
 .RData
