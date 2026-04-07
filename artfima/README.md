@@ -48,6 +48,9 @@ set
         fits/
         summaries/
 
+The folders data and results are created when the scripts are executed. The 
+simulation results aren't included due to size.
+
 ------------------------------------------------------------------------
 
 ## Pipeline Description
