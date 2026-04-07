@@ -22,7 +22,7 @@ This document provides a minimal, end-to-end set of shell commands to reproduce 
 
 mkdir -p figure_data \
 mkdir -p figure_results \
-mkdir -p case_study_pilot \
+mkdir -p case_study_pilot
 
 ---
 
@@ -103,4 +103,9 @@ figure_results/CI_ar2_errors_main.pdf
 ---
 
 # Frequentist Coverage
+
+Please note that this takes a very long time. For minimal reproduction set
+  - N_REPS=3
+  - T_VAL=10000
+in run_case_study_batch.sh
 
