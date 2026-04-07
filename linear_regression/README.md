@@ -41,12 +41,14 @@ This provides the workflow of a single end-to-end simulation that reproduces Fig
 
 ## Step 1 — Simulate data
 
+```bash
 Rscript simulate_data.R \
   --T 10000 \
   --p 50 \
   --phi1 0.4 \
   --phi2 -0.6 \
   --output figure_data/ar2_sim.rds
+'''
 
 ---
 
