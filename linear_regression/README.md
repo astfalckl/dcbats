@@ -20,9 +20,9 @@ This document provides a minimal, end-to-end set of shell commands to reproduce 
 
 ## Directory setup
 
-mkdir -p figure_data
-mkdir -p figure_results
-mkdir -p case_study_pilot
+mkdir -p figure_data \
+mkdir -p figure_results \
+mkdir -p case_study_pilot \
 
 ---
 
