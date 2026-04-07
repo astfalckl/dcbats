@@ -69,13 +69,8 @@ set
     -   Full posterior (temper = 1)
     -   Subset posteriors for K = 5, 10, 20 (tempered likelihood)
 -   Outputs:
-
-```{=html}
-<!-- -->
-```
-    results/fits/<scenario>/<sim_id>/full.rds
-    results/fits/<scenario>/<sim_id>/K05/k01.rds
-    ...
+    -   results/fits/<scenario>/<sim_id>/full.rds
+    -   results/fits/<scenario>/<sim_id>/K05/k01.rds
 
 ------------------------------------------------------------------------
 
