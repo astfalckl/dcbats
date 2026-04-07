@@ -35,7 +35,7 @@ mkdir -p case_study_pilot
 
 # Make Figure
 
-This provides the workflow of a single end-to-end simulation that reproduces Figure~1.
+This provides the workflow of a single end-to-end simulation that reproduces Figure~1. Run all commands in terminal from the current directory.
 
 ---
 
@@ -54,6 +54,7 @@ Rscript simulate_data.R \
 
 ## Step 2 — Fit full and subset posteriors
 
+``` bash
 Rscript fit_posteriors.R \
   --data figure_data/ar2_sim.rds \
   --stan-file model_ar2_errors.stan \
@@ -63,6 +64,7 @@ Rscript fit_posteriors.R \
   --parallel-chains 4 \
   --iter-warmup 1000 \
   --iter-sampling 1000
+```
 
 Outputs:
 
@@ -74,6 +76,7 @@ Outputs:
 
 ## Step 3 — Wasserstein aggregation
 
+``` bash
 Rscript wasserstein_average.R \
   --input figure_results/subset_posteriors_K10.rds \
   --output figure_results/wasserstein_beta_K10.rds
@@ -81,11 +84,13 @@ Rscript wasserstein_average.R \
 Rscript wasserstein_average.R \
   --input figure_results/subset_posteriors_K20.rds \
   --output figure_results/wasserstein_beta_K20.rds
+```
 
 ---
 
 ## Step 4 — Generate figure
 
+``` bash
 Rscript make_figure_paper.R \
   --data figure_data/ar2_sim.rds \
   --full figure_results/full_posterior_draws.rds \
@@ -95,6 +100,7 @@ Rscript make_figure_paper.R \
   --width 8 \
   --height 3 \
   --output figure_results/CI_ar2_errors_main.pdf
+```
 
 ---
 
