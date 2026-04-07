@@ -107,5 +107,6 @@ figure_results/CI_ar2_errors_main.pdf
 Please note that this takes a very long time. For minimal reproduction set
   - N_REPS=3
   - T_VAL=10000
+
 in run_case_study_batch.sh
 
