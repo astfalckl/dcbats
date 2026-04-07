@@ -48,7 +48,7 @@ Rscript simulate_data.R \
   --phi1 0.4 \
   --phi2 -0.6 \
   --output figure_data/ar2_sim.rds
-'''
+```
 
 ---
 
