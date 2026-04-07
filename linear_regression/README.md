@@ -33,7 +33,7 @@ mkdir -p case_study_pilot
   - --iter-warmup
   - --iter-sampling
 
-# Make Figure
+# Make Figure 1
 
 This provides the workflow of a single end-to-end simulation that reproduces Figure~1. Run all commands in terminal from the current directory.
 
@@ -110,7 +110,7 @@ figure_results/CI_ar2_errors_main.pdf
 
 ---
 
-# Frequentist Coverage
+# Frequentist Coverage (Table 1)
 
 Please note that this takes a very long time. For minimal reproduction set
   - N_REPS=3
