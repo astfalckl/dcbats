@@ -54,12 +54,8 @@ set
 
 -   Generates ARTFIMA time series using a fast PSD → ACF calculation
 -   Outputs:
-
-```{=html}
-<!-- -->
-```
-    data/simulated/<scenario>/<sim_id>/data.rds
-    data/simulated/<scenario>/<sim_id>/meta.rds
+    -   data/simulated/<scenario>/<sim_id>/data.rds
+    -   data/simulated/<scenario>/<sim_id>/meta.rds
 
 ------------------------------------------------------------------------
 
@@ -81,11 +77,7 @@ set
 -   Computes subset posterior barycenters: average of quantiles across
     subsets
 -   Outputs:
-
-```{=html}
-<!-- -->
-```
-    results/summaries/posterior_quantiles.rds
+    -   results/summaries/posterior_quantiles.rds
 
 ------------------------------------------------------------------------
 
@@ -94,12 +86,8 @@ set
 -   Computes relative Wasserstein distances
 -   Aggregates across simulation replicates
 -   Outputs:
-
-```{=html}
-<!-- -->
-```
-    results/summaries/wasserstein_by_sim.rds
-    results/summaries/wasserstein_summary.rds
+    -   results/summaries/wasserstein_by_sim.rds
+    -   results/summaries/wasserstein_summary.rds
 
 ------------------------------------------------------------------------
 
