@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Pilot batch driver for the AR(2) case study.
-# Runs 3 replicates for each of 4 scenarios, with K in {5,10,20}.
+# Batch driver for the AR(2) case study.
+# Runs 50 replicates for each of 4 scenarios, with K in {5,10,20}.
 #
 # Directory layout:
 # case_study_pilot/
@@ -84,7 +84,7 @@ run_one_rep() {
 }
 
 # Scenarios from the paper excerpt
-for rep in $(seq 1 "${N_REPS}"); do
+for rep in $(seq 13 "${N_REPS}"); do
   run_one_rep "iid"   "0.0" "0.0" "${rep}"
   run_one_rep "case1" "0.3" "0.1" "${rep}"
   run_one_rep "case2" "0.8" "0.0" "${rep}"
@@ -92,5 +92,5 @@ for rep in $(seq 1 "${N_REPS}"); do
 done
 
 echo
-echo "Pilot batch run complete."
+echo "Batch run complete."
 echo "Outputs written under: ${OUT_ROOT}"

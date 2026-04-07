@@ -118,3 +118,18 @@ Please note that this takes a very long time. For minimal reproduction set
 
 in run_case_study_batch.sh
 
+## Batch run simulations 
+
+```bash
+chmod +x run_case_study_batch.sh
+
+./run_case_study_batch.sh
+```
+
+## Aggregate results into table
+
+``` bash
+Rscript summarise_coverage_case_study.r \
+  --root case_study_pilot \
+  --n-reps 50
+```
