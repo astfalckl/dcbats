@@ -1,5 +1,6 @@
 # Project-specific outputs
 linear_regression/case_study_pilot/
+linear_regression/case_study/
 linear_regression/figure_data/
 linear_regression/figure_results/
 linear_regression/__run_example.r
