@@ -16,7 +16,7 @@ parameters <- c("phi")
 probs <- seq(0.001, 0.999, by = 0.001)
 K_values <- c(5L, 10L, 20L)
 
-sim_id_target <- "012"
+sim_id_target <- "001" #Figure in paper corresponds to index 012
 scenario_ids <- c("lambda0005_d01_phi01",
                   "lambda0005_d01_phi09",
                   "lambda0005_d01_phi099")

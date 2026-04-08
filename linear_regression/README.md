@@ -1,4 +1,4 @@
-# AR(2) Simulation
+# Linear Regression with AR(2) Errors
 
 This document provides a minimal, end-to-end set of shell commands to reproduce the AR(2) simulation, posterior estimation, Wasserstein aggregation, and final figure.
 
