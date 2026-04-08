@@ -1,4 +1,4 @@
-# AR(2) Simulation and DC-BATS Reproducibility
+# AR(2) Simulation
 
 This document provides a minimal, end-to-end set of shell commands to reproduce the AR(2) simulation, posterior estimation, Wasserstein aggregation, and final figure.
 
@@ -20,9 +20,11 @@ This document provides a minimal, end-to-end set of shell commands to reproduce 
 
 ## Directory setup
 
+``` bash
 mkdir -p figure_data \
 mkdir -p figure_results \
 mkdir -p case_study_pilot
+```
 
 ---
 
@@ -112,11 +114,9 @@ figure_results/CI_ar2_errors_main.pdf
 
 # Frequentist Coverage (Table 1)
 
-Please note that this takes a very long time. For minimal reproduction set
+Please note that this takes a very long time and was batch ran on a HPC. For minimal reproduction in `run_case_study_batch.sh` set
   - N_REPS=3
   - T_VAL=10000
-
-in run_case_study_batch.sh
 
 ## Batch run simulations 
 
@@ -131,5 +131,5 @@ chmod +x run_case_study_batch.sh
 ``` bash
 Rscript summarise_coverage_case_study.r \
   --root case_study \
-  --n-reps 30
+  --n-reps 50
 ```

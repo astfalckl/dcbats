@@ -13,12 +13,10 @@ This repository implements a fully reproducible pipeline for:
 
 ## Some notes
 
-Some code is borrowed from an archived version of artfima. The package
-is no longer available on CRAN, but is copied in this repo, and the required
-functions are hard-called (i.e. no installation necessary).
+This is a more complicated codebase than the AR(2) example as so has slightly different structure. Some code is borrowed from an archived version of artfima. The package is no longer available on CRAN, but is copied in this repo, and the required functions are hard-called (i.e. no installation necessary).
 
 It is also a fairly lengthy amount of simulation. For reproducibility I would
-set `n_simulations <- 2` in `simulate_data.r`. Note, the full simulation study with `n_simulations <- 100` was run in parallel on a HPC and would take days on a standard laptop.
+set `n_simulations <- 2` in `simulate_data.r`. Note, the full simulation study with `n_simulations <- 100` was run in parallel on a HPC and would take multiple days on a standard laptop.
 
 ------------------------------------------------------------------------
 
