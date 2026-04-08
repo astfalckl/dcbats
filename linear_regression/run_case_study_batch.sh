@@ -84,7 +84,7 @@ run_one_rep() {
 }
 
 # Scenarios from the paper excerpt
-for rep in $(seq 1 "${N_REPS}"); do
+for rep in $(seq 14 "${N_REPS}"); do
   run_one_rep "iid"   "0.0" "0.0" "${rep}"
   run_one_rep "case1" "0.3" "0.1" "${rep}"
   run_one_rep "case2" "0.8" "0.0" "${rep}"

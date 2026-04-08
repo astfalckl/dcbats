@@ -5,11 +5,9 @@
 This repository implements a fully reproducible pipeline for:
 
 1.  Simulating ARTFIMA time series
-2.  Fitting posterior distributions via a custom Metropolis--Hastings
-    sampler
-3.  Constructing Wasserstein barycenter approximations using subset
-    posteriors
-4.  Aggregating results across Monte Carlo replicates
+2.  Fitting posterior distributions via a MH sampler
+3.  Constructing Wasserstein barycenter approximations using subset posteriors
+4.  Aggregating results
 
 ------------------------------------------------------------------------
 
@@ -20,7 +18,7 @@ is no longer available on CRAN, but is copied in this repo, and the required
 functions are hard-called (i.e. no installation necessary).
 
 It is also a fairly lengthy amount of simulation. For reproducibility I would
-set 
+set `n_simulations <- 2` in `simulate_data.r`. Note, the full simulation study with `n_simulations <- 100` was run in parallel on a HPC and would take days on a standard laptop.
 
 ------------------------------------------------------------------------
 
@@ -32,6 +30,7 @@ set
         fast_acf_from_psd.R
         mh_artfima.R
         wasserstein_utils.R
+        plot_examples.R
 
       artfima/  <--- [archived version of artfima]
 
@@ -40,6 +39,9 @@ set
         fit_posteriors.R
         wasserstein_average.R
         aggregate_results.R
+        make_fit_tasks.R <--- [for HPC execution]
+        run_one_sim_fit.R <--- [for HPC execution]
+        fit_posteriors_array.pbs <--- [for HPC execution]
 
       data/
         simulated/
@@ -105,7 +107,10 @@ Rscript scripts/simulate_data.R
 Rscript scripts/fit_posteriors.R
 Rscript scripts/wasserstein_average.R
 Rscript scripts/aggregate_results.R
+Rscript scripts/plot_examples.R
 ```
+
+The last command reproduces Figure~2.
 
 ------------------------------------------------------------------------
 
