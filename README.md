@@ -12,6 +12,7 @@ This repository contains the three case studies from the paper "Scalable Bayesia
 
 - Figure 1: `linear_regression/` via `make_figure_paper.r`; main output `figure_results/CI_ar2_errors_main.pdf`
 - Table 1: `linear_regression/` via `run_case_study_batch.sh` and `summarise_coverage_case_study.r`; summary output `case_study/coverage_summary_table.csv`
+- Table 2: `artfima/` via `scripts/aggregate_results.r`; summary outputs `results/summaries/wasserstein_summary.rds` and `results/summaries/wasserstein_summary_long.rds`
 - Figure 2: `artfima/` via `scripts/plot_examples.r`; set `sim_id_target <- "012"` to match the paper figure
 - Table 3: `air_quality/` via `run_analysis.r`; output `results_intervals.csv`
 

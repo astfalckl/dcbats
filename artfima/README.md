@@ -4,6 +4,7 @@ This folder contains the ARTFIMA simulation study and the Figure 2 example plot 
 
 ## Results in paper
 
+- Table 2: `scripts/aggregate_results.r`
 - Figure 2: `scripts/plot_examples.r`
 
 ## Requirements
