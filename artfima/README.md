@@ -1,6 +1,10 @@
 # ARTFIMA Simulation
 
-This folder contains the ARTFIMA simulation study and Wasserstein summaries used in the paper.
+This folder contains the ARTFIMA simulation study and the Figure 2 example plot used in the paper.
+
+## Results in paper
+
+- Figure 2: `scripts/plot_examples.r`
 
 ## Requirements
 
@@ -37,4 +41,5 @@ The summary outputs are written under `results/summaries/`.
 - The full simulation study uses `n_simulations <- 100` in `scripts/simulate_data.r` and takes a long time.
 - For a lighter reproducibility run, set `n_simulations <- 2` before running the pipeline.
 - Not all generated simulation outputs are checked into the repository because of size.
-- `scripts/plot_examples.r` currently uses `sim_id_target <- "001"`; change that value in the script if you want a different replicate.
+- The paper-scale version of this study was run in parallel on HPC, but the repository only includes the analysis scripts themselves, not cluster-specific `.pbs` submission files.
+- `scripts/plot_examples.r` uses a fixed simulation index. Set `sim_id_target <- "012"` to match the paper figure noted in the script comments; the checked-in default can be changed if you want a different replicate.

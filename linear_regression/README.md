@@ -57,7 +57,7 @@ The main output is `figure_results/CI_ar2_errors_main.pdf`.
 
 `run_case_study_batch.sh` runs the repeated simulation study and writes outputs under `case_study/`.
 
-The paper-scale settings in that script (`N_REPS=50`, `T_VAL=100000`) are slow and were intended for HPC use. For a lighter reproducibility run, reduce those values first, then run:
+The paper-scale settings in that script (`N_REPS=50`, `T_VAL=100000`) are slow and were intended for HPC use. The repository includes the batch driver script itself, but not scheduler-specific `.pbs` submission files. For a lighter reproducibility run, reduce those values first, then run:
 
 ```bash
 chmod +x run_case_study_batch.sh
@@ -73,3 +73,4 @@ This writes `case_study/coverage_summary_long.csv` and `case_study/coverage_summ
 ## Notes
 
 - For quick tests, the main parameters to reduce are `--T`, `--iter-warmup`, and `--iter-sampling`.
+- If you want to rerun the larger study on a cluster, `run_case_study_batch.sh` is the entry point to wrap in your local scheduler.

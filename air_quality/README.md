@@ -2,6 +2,10 @@
 
 This folder contains the LA particulate matter case study used for Table 3.
 
+## Results in paper
+
+- Table 3: `run_analysis.r`
+
 ## Requirements
 
 - R
