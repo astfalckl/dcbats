@@ -1,63 +1,28 @@
 # Linear Regression with AR(2) Errors
 
-This document provides a minimal, end-to-end set of shell commands to reproduce the AR(2) simulation, posterior estimation, Wasserstein aggregation, and final figure.
-
----
+This folder contains the AR(2) linear regression example used for Figure 1 and the repeated simulation used for Table 1.
 
 ## Requirements
 
-- R (≥ 4.2 recommended)
-- R packages:
-  - cmdstanr
-  - posterior
-  - optparse
-  - ggplot2
-  - dplyr
-  - tidyr
-- CmdStan installed and configured via cmdstanr
+- R
+- `cmdstanr`, `posterior`, `optparse`, `ggplot2`, `dplyr`, `tidyr`
+- CmdStan installed and configured via `cmdstanr`
 
----
+## Reproduce Figure 1
 
-## Directory setup
-
-``` bash
-mkdir -p figure_data \
-mkdir -p figure_results \
-mkdir -p case_study_pilot
-```
-
----
-
-## Notes
-
-- For quick tests, reduce:
-  - --T
-  - --iter-warmup
-  - --iter-sampling
-
-# Make Figure 1
-
-This provides the workflow of a single end-to-end simulation that reproduces Figure~1. Run all commands in terminal from the current directory.
-
----
-
-## Step 1 — Simulate data
+Run the following from this directory:
 
 ```bash
-Rscript simulate_data.R \
+mkdir -p figure_data figure_results
+
+Rscript simulate_data.r \
   --T 10000 \
   --p 50 \
   --phi1 0.4 \
   --phi2 -0.6 \
   --output figure_data/ar2_sim.rds
-```
 
----
-
-## Step 2 — Fit full and subset posteriors
-
-``` bash
-Rscript fit_posteriors.R \
+Rscript fit_posteriors.r \
   --data figure_data/ar2_sim.rds \
   --stan-file model_ar2_errors.stan \
   --output-dir figure_results \
@@ -66,34 +31,16 @@ Rscript fit_posteriors.R \
   --parallel-chains 4 \
   --iter-warmup 1000 \
   --iter-sampling 1000
-```
 
-Outputs:
-
-- figure_results/full_posterior_draws.rds
-- figure_results/subset_posteriors_K10.rds
-- figure_results/subset_posteriors_K20.rds
-
----
-
-## Step 3 — Wasserstein aggregation
-
-``` bash
-Rscript wasserstein_average.R \
+Rscript wasserstein_average.r \
   --input figure_results/subset_posteriors_K10.rds \
   --output figure_results/wasserstein_beta_K10.rds
 
-Rscript wasserstein_average.R \
+Rscript wasserstein_average.r \
   --input figure_results/subset_posteriors_K20.rds \
   --output figure_results/wasserstein_beta_K20.rds
-```
 
----
-
-## Step 4 — Generate figure
-
-``` bash
-Rscript make_figure_paper.R \
+Rscript make_figure_paper.r \
   --data figure_data/ar2_sim.rds \
   --full figure_results/full_posterior_draws.rds \
   --w10 figure_results/wasserstein_beta_K10.rds \
@@ -104,32 +51,25 @@ Rscript make_figure_paper.R \
   --output figure_results/CI_ar2_errors_main.pdf
 ```
 
----
+The main output is `figure_results/CI_ar2_errors_main.pdf`.
 
-## Output
+## Coverage study
 
-figure_results/CI_ar2_errors_main.pdf
+`run_case_study_batch.sh` runs the repeated simulation study and writes outputs under `case_study/`.
 
----
-
-# Frequentist Coverage (Table 1)
-
-Please note that this takes a very long time and was batch ran on a HPC. For minimal reproduction in `run_case_study_batch.sh` set
-  - N_REPS=3
-  - T_VAL=10000
-
-## Batch run simulations 
+The paper-scale settings in that script (`N_REPS=50`, `T_VAL=100000`) are slow and were intended for HPC use. For a lighter reproducibility run, reduce those values first, then run:
 
 ```bash
 chmod +x run_case_study_batch.sh
-
 ./run_case_study_batch.sh
-```
 
-## Aggregate results into table
-
-``` bash
 Rscript summarise_coverage_case_study.r \
   --root case_study \
-  --n-reps 50
+  --n-reps {N_REPS}
 ```
+
+This writes `case_study/coverage_summary_long.csv` and `case_study/coverage_summary_table.csv`.
+
+## Notes
+
+- For quick tests, the main parameters to reduce are `--T`, `--iter-warmup`, and `--iter-sampling`.

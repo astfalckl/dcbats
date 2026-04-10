@@ -101,6 +101,8 @@ ci_dc <- rbindlist(lapply(params, function(p) {
 result <- merge(ci_dc, ci_full, by = "parameter", suffixes = c("_dc", "_full"))
 print(result)
 
+fwrite(result, "results_intervals.csv")
+
 
 
 
